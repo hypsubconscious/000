@@ -72,8 +72,8 @@ courses = [
 # Google 表單連結
 course_forms = {
     1: "https://docs.google.com/forms/d/e/1FAIpQLSfKreyCHMJ_gRd7fVO835-Alq2k8oMeeBYlCnKXL9CkTArqVg/viewform?embedded=true",
-    2: "https://docs.google.com/forms/d/e/YOUR_FORM_ID_2/viewform?embedded=true",
-    3: "https://docs.google.com/forms/d/e/YOUR_FORM_ID_3/viewform?embedded=true"
+    2: "https://docs.google.com/forms/d/e/1FAIpQLSc0Wi28xIkCnfP2FaXl5L-4ILpoa_PMreKOw-uFLrkuTsTfsg/viewform?embedded=true" width="640" height="414" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>",
+    3: "https://docs.google.com/forms/d/e/1FAIpQLScZFPSILhhyAfQzfBf0bZ0tLrSMcjJ48PEJcnNskQmgZzGUQg/viewform?embedded=true" width="640" height="414" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>"
 }
 
 # 新聞數據
