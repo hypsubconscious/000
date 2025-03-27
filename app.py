@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, render_template  # 确保包含 render_template
+from flask import request, redirect, url_for  # 你原有的其他导入
 
 app = Flask(__name__)
 
