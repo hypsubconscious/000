@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1>{{ course.name }}</h1>
+            <p class="lead text-muted">{{ course.tagline }}</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <img src="{{ url_for('static', filename='images/' + course.image) }}" 
+                     class="img-fluid rounded shadow" 
+                     alt="{{ course.name }}">
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3><i class="bi bi-stars text-warning"></i> 課程亮點</h3>
+                        <ul class="list-group list-group-flush mb-4">
+                            {% for highlight in course.highlights %}
+                            <li class="list-group-item">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                {{ highlight }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <div class="alert alert-info">
+                            <i class="bi bi-people-fill"></i> 
+                            <strong>適合對象：</strong> {{ course.details.target }}
+                        </div>
+                        
+                        <a href="{{ url_for('select_course') }}" class="btn btn-warning btn-lg w-100">
+                            <i class="bi bi-pencil-square"></i> 立即報名
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 課程大綱 -->
+        <div class="card shadow-sm mt-4">
+            <div class="card-header bg-white">
+                <h3 class="mb-0"><i class="bi bi-journal-bookmark"></i> 課程大綱</h3>
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for item in course.details.outline %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

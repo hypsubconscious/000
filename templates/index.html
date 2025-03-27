@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- 首頁橫幅 -->
+<section class="hero-banner bg-primary text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4">開啟您的催眠療癒之旅</h1>
+        <p class="lead">專業師資團隊，實戰導向課程</p>
+
+    </div>
+</section>
+
+<!-- 特色課程 -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">熱門課程</h2>
+        <div class="row">
+            {% for course in courses %}  <!-- 這裡使用 courses 變數 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='images/' + course.image) }}" 
+                         class="card-img-top" 
+                         alt="{{ course.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ course.name }}</h5>
+                        <p class="card-text">{{ course.duration }}</p>
+                        <p class="text-primary fw-bold">{{ course.price }}</p>
+                        <div class="btn-group w-100">
+                            <a href="{{ url_for('course_detail', course_id=course.id) }}" 
+                               class="btn btn-outline-primary">課程詳情</a>
+                            <a href="{{ url_for('select_course') }}" 
+                               class="btn btn-primary">立即報名</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 最新消息 -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">最新消息</h2>
+        <div class="row">
+            {% for item in news %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="text-muted">{{ item.date }}</p>
+                        <p class="card-text">{{ item.content[:100] }}...</p>
+                        <a href="{{ url_for('news_detail', news_id=item.id) }}" 
+                           class="btn btn-primary">閱讀更多</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

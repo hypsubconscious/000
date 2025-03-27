@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">關於我們</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/about.jpg') }}" 
+                     alt="關於我們" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h2>我們的使命</h2>
+                <p>我們致力於提供高質量的程式設計教育，幫助學員掌握最新的技術，實現職業轉型與提升。</p>
+                <h2>我們的優勢</h2>
+                <ul>
+                    <li>專業師資團隊</li>
+                    <li>實戰導向課程</li>
+                    <li>完善的學習資源</li>
+                    <li>就業輔導服務</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

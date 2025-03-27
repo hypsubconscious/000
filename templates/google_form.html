@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col">
+                <a href="{{ url_for('select_course') }}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> 返回課程選擇
+                </a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="ratio ratio-16x9">
+                    <iframe src="{{ form_url }}" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0"
+                            class="border rounded shadow">
+                        載入中...
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
