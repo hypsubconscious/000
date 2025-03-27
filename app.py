@@ -129,5 +129,7 @@ def news_detail(news_id):
         return render_template('news_detail.html', news_item=news_item)
     return redirect(url_for('news_list'))
 
+
+
 if __name__ == '__main__':
     app.run(debug=True)
